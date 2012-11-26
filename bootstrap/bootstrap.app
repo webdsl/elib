@@ -140,12 +140,25 @@ section tables
   		elements
   	}
   }
+  
+  template tableHovered(){
+  	table[class="table table-hover",  all attributes]{
+  		elements
+  	}
+  }
+  
   template theader() {
   	<thead all attributes>elements</thead>
   }
+  
+  template tbody() {
+  	<thead all attributes>elements</thead>
+  }
+  
   template th(){
   	<th all attributes>elements</th>
   }
+  
 
 section forms
 
