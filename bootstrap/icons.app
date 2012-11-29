@@ -250,5 +250,7 @@ define iResizeVertical() { <i class="icon-resize-vertical"></i> }
 define iResizeVerticalWhite() { <i class="icon-resize-vertical icon-white"></i> }
 define iResizeHorizontal() { <i class="icon-resize-horizontal"></i> }
 define iResizeHorizontalWhite() { <i class="icon-resize-horizontal icon-white"></i> }
+define iBell() { <i class="icon-bell"></i> }
+define iBellWhite() { <i class="icon-bell icon-white"></i> }
 
 
