@@ -506,18 +506,18 @@ section modal
   	</script>
   }
   
-section descriptions
+section definitionList
 
-	define description() {
+	 define definitionList() {
 		<dl>elements</dl>
 	}
 	
-	define descriptionItem(term : String) {
+	define definitionItem(term : String) {
 		<dt> output(term) </dt>
 		<dd> elements </dd>
 	}
   
-  	define horizontalDescription() {
+  	define definitionListDescription() {
   		<dl class="dl-horizontal"> elements </dl>
   	}
   	
