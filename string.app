@@ -1,5 +1,9 @@
 module elib/string
 
+  type String{
+    substring(Int,Int):String
+  }
+
   entity StringPair { 
     left :: String
     right :: String
@@ -108,6 +112,14 @@ module elib/string
     }
   }
   
+  function abbreviateNE(s : String, length : Int) : String {
+    if(s.length() <= length) {
+      return s;
+    } else {
+      return prefix(s, length);
+    }
+  }
+    
   function concat(xs: List<String>, sep: String): String {
   	if(xs.length == 0) { 
   		return "";
@@ -128,7 +140,7 @@ module elib/string
   }
 
   function prefix(s : String, length : Int) : String {
-    return s.substring(0,length);
+    return s.substring(0, length);
     /*
     if(s.length() <= length) {
       return s;
