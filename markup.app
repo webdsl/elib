@@ -7,6 +7,8 @@ section markup
   template header3(){ <h3> elements </h3> }
   template header4(){ <h4> elements </h4> }
   
+  template hrule(){ <hr /> }
+  
 //  template par() { <p> elements </p> }
 
 section forms
@@ -19,3 +21,4 @@ section forms
   // }
   
   define save() { submit action{ } { "Save" } }
+
