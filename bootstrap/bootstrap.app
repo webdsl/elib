@@ -1,6 +1,6 @@
 module elib/bootstrap/bootstrap
 
-imports elib/bootstrap/icons 
+imports elib/bootstrap/icons    
 
 section positioning
 
@@ -17,7 +17,7 @@ section grid system
   	div[class="container", all attributes]{ elements }
   }
   template gridContainerFluid(){
-  	div[class="container", all attributes]{ elements }  	
+  	div[class="container-fluid", all attributes]{ elements }  	
   } 
   template gridRowFluid(){
   	div[class="row-fluid", all attributes]{ elements }
@@ -121,12 +121,17 @@ section sections
   }
   template pageHeader2() {
     div[class="page-header"]{
-      <h2> elements </h2>
+      header2{ elements }
     }
   }
   template pageHeader3() {
     div[class="page-header"]{
       header3{ elements }
+    }
+  }
+  template pageHeader4() {
+    div[class="page-header"]{
+      header4{ elements }
     }
   }
   template small() {
@@ -140,25 +145,12 @@ section tables
   		elements
   	}
   }
-  
-  template tableHovered(){
-  	table[class="table table-hover",  all attributes]{
-  		elements
-  	}
-  }
-  
   template theader() {
   	<thead all attributes>elements</thead>
   }
-  
-  template tbody() {
-  	<thead all attributes>elements</thead>
-  }
-  
   template th(){
   	<th all attributes>elements</th>
   }
-  
 
 section forms
 
@@ -186,6 +178,20 @@ section forms
   	div[class="form-actions"]{ elements }
   }
   
+  template formSearch(query: Ref<String>) {
+    form[class="form-search"]{
+      input(query)[class="input-medium search-query", placeholder="Search"] 
+      elements
+    }
+  } 
+  
+  template navbarSearch(query: Ref<String>) {
+    form[class="navbar-search pull-left"]{
+      input(query)[class="search-query", placeholder="Search"]
+      elements
+    }
+  }
+      
 section horizontal forms
 
   template horizontalForm(){
@@ -248,6 +254,16 @@ section buttons
   		elements
   	}
   }
+  template buttonGroupSpan(){
+    span[class="btn-group", all attributes]{
+      elements
+    }
+  }
+  template buttonGroupVertical(){
+    div[class="btn-group btn-group-vertical", all attributes]{
+      elements
+    }
+  }
   template buttonNavigate(nav: String) {
   	//navigate url(nav) [class="btn"]{ elements }
   	<a href=nav class="btn">elements</a>
@@ -255,29 +271,29 @@ section buttons
   template button() {
   	div[class="btn", all attributes]{ elements }
   }
-  template buttonMini(){
-  	div[class="btn btn-mini", all attributes]{ elements }
-  }
-  template buttonSmall(){
-  	div[class="btn btn-small", all attributes]{ elements }
-  }
-  template buttonPrimary() {
-  	div[class="btn btn-primary ", all attributes]{ elements }
-  }
-  template buttonPrimaryMini(){
-  	div[class="btn btn-mini btn-primary", all attributes]{ elements }
-  }
-  template buttonPrimarySmall(){
-  	div[class="btn btn-small btn-primary", all attributes]{ elements }
-  }
-
   
-section dropdowns
+  template inputAppend() {
+    <div class="input-append">
+      elements
+    </div>
+  }
+  template inputPrepend() {
+    <div class="input-prepend">
+      elements
+    </div>
+  }
+  
+section dropdowns 
 
   template dropdownMenu(){
   	list[class="dropdown-menu", all attributes]{
   		elements
   	}
+  }
+  template dropdownMenuRight(){
+    list[class="dropdown-menu pull-right", all attributes]{
+      elements
+    }
   }
   template subMenu() {
   	dropdownMenuDivider
@@ -309,7 +325,7 @@ section dropdowns
   	</li>
   }
   template dropdownCaret() {
-    <a class="btn dropdown-toggle" href="#" data-toggle="dropdown">
+    <a class="btn dropdown-toggle" href="#" data-toggle="dropdown" style="height:14px;padding:7px;">
        <span class="caret"></span>
     </a>
     dropdownMenu{ elements }
@@ -326,9 +342,6 @@ section miscellaneous
 
   template well(){ 
   	div[class="well", all attributes]{ elements }
-  }
-  template wellSmall(){
-  	div[class="well well-small", all attributes]{ elements }
   }
   
   template blockquote() {
@@ -465,61 +478,10 @@ section alerts
   }
 */
 
-section modal
 
-  define modalLink (modalID : String){
-  	<a data-toggle="modal" href="#" + modalID all attributes except ["href","data-toggle"] >elements</a>
-  }
 
-  define modal(modalID : String){
-  	<div class="modal " + attribute("class") id=modalID>
-  		elements
-  	</div>
-  }
-
-  define modalHeader(){
-  	<div class="modal-header">
-  		<a class="close" data-dismiss="modal">iRemove()</a>
-  		elements
-  	</div>
-  }
-
-  define modalBody(){
-  	<div class="modal-body">
-  		elements
-  	</div>
-  }
- 
-  define modalFooter(){ 
-  	<div class="modal-footer">
-  		elements
-  	</div>
-  }
   
-  define modalCloseLink(){
-  	<a href="#" data-dismiss="modal" all attributes except ["href","data-dismiss"]>elements</a>
-  }
-
-  define modalHide(modalID : String){
-  	<script>
-  		$('#~modalID').hide();
-  	</script>
-  }
   
-section definitionList
-
-	 define definitionList() {
-		<dl>elements</dl>
-	}
-	
-	define definitionItem(term : String) {
-		<dt> output(term) </dt>
-		<dd> elements </dd>
-	}
   
-  	define definitionListDescription() {
-  		<dl class="dl-horizontal"> elements </dl>
-  	}
-  	
 
 
