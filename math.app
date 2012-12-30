@@ -9,23 +9,28 @@ module elib/math
   }
 
   function abs(i : Int) : Int {
-    if(i < 0) { return 0 - i; } else { return i; }
+    return if(i < 0) (0 - i) else i;
+    //if(i < 0) { return 0 - i; } else { return i; }
   }
   
   function max(i : Int, j : Int) : Int {
-    if(i > j) { return i; } else { return j; }
+    return if(i > j) i else j;
+    //if(i > j) { return i; } else { return j; }
   }
 
   function max(i : Float, j : Float) : Float {
-    if(i > j) { return i; } else { return j; }
+    return if(i > j) i else j;
+    //if(i > j) { return i; } else { return j; }
   }
   
   function min(i : Int, j : Int) : Int {
-    if(i > j) { return j; } else { return i; }
+    return if(i > j) j else i;
+    //if(i > j) { return j; } else { return i; }
   }
 
   function min(i : Float, j : Float) : Float {
-    if(i > j) { return j; } else { return i; }
+    return if(i > j) j else i;
+    //if(i > j) { return j; } else { return i; }
   }
     
   function mod(i : Int, j : Int) : Int {
@@ -34,13 +39,15 @@ module elib/math
   }
   
   function inc(i: Int, b: Bool): Int {
-  	if(b) { return i + 1; } else { return i; }
+    return if(b) i + 1 else i;
+  	//if(b) { return i + 1; } else { return i; }
   }
   
   function percentage(part: Int, total: Int): Int {
-  	if(total == 0) { return 0; } else {
-  		return (part * 100) / total ;
-  	}
+    return if(total == 0) 0 else (part * 100) / total ;
+  	// if(total == 0) { return 0; } else {
+  	// 	return (part * 100) / total ;
+  	// }
   }
   
   function round1(f: Float): Float{
