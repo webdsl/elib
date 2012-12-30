@@ -107,7 +107,15 @@ module elib/string
       return prefix(s, length - 4) + " ...";
     }
   }
-  
+
+  function abbreviateNE(s : String, length : Int) : String {
+    if(s.length() <= length) {
+      return s;
+    } else {
+      return prefix(s, length);
+    }
+  }
+    
   function concat(xs: List<String>, sep: String): String {
   	if(xs.length == 0) { 
   		return "";
