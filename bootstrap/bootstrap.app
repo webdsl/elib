@@ -1,6 +1,6 @@
 module elib/bootstrap/bootstrap
 
-imports elib/bootstrap/icons 
+imports elib/bootstrap/icons    
 
 section positioning
 
@@ -17,7 +17,7 @@ section grid system
   	div[class="container", all attributes]{ elements }
   }
   template gridContainerFluid(){
-  	div[class="container", all attributes]{ elements }  	
+  	div[class="container-fluid", all attributes]{ elements }  	
   } 
   template gridRowFluid(){
   	div[class="row-fluid", all attributes]{ elements }
@@ -121,12 +121,17 @@ section sections
   }
   template pageHeader2() {
     div[class="page-header"]{
-      <h2> elements </h2>
+      header2{ elements }
     }
   }
   template pageHeader3() {
     div[class="page-header"]{
       header3{ elements }
+    }
+  }
+  template pageHeader4() {
+    div[class="page-header"]{
+      header4{ elements }
     }
   }
   template small() {
@@ -158,7 +163,6 @@ section tables
   template th(){
   	<th all attributes>elements</th>
   }
-  
 
 section forms
 
@@ -186,6 +190,20 @@ section forms
   	div[class="form-actions"]{ elements }
   }
   
+  template formSearch(query: Ref<String>) {
+    form[class="form-search"]{
+      input(query)[class="input-medium search-query", placeholder="Search"] 
+      elements
+    }
+  } 
+  
+  template navbarSearch(query: Ref<String>) {
+    form[class="navbar-search pull-left"]{
+      input(query)[class="search-query", placeholder="Search"]
+      elements
+    }
+  }
+      
 section horizontal forms
 
   template horizontalForm(){
@@ -248,6 +266,16 @@ section buttons
   		elements
   	}
   }
+  template buttonGroupSpan(){
+    span[class="btn-group", all attributes]{
+      elements
+    }
+  }
+  template buttonGroupVertical(){
+    div[class="btn-group btn-group-vertical", all attributes]{
+      elements
+    }
+  }
   template buttonNavigate(nav: String) {
   	//navigate url(nav) [class="btn"]{ elements }
   	<a href=nav class="btn">elements</a>
@@ -279,6 +307,11 @@ section dropdowns
   		elements
   	}
   }
+  template dropdownMenuRight(){
+    list[class="dropdown-menu pull-right", all attributes]{
+      elements
+    }
+  }
   template subMenu() {
   	dropdownMenuDivider
   	elements
@@ -309,7 +342,7 @@ section dropdowns
   	</li>
   }
   template dropdownCaret() {
-    <a class="btn dropdown-toggle" href="#" data-toggle="dropdown">
+    <a class="btn dropdown-toggle" href="#" data-toggle="dropdown" style="height:14px;padding:7px;">
        <span class="caret"></span>
     </a>
     dropdownMenu{ elements }
