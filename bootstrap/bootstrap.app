@@ -71,6 +71,20 @@ section navigation bar
       }
     }
   }
+
+  template navbarResponsiveWhite() {
+    div[class="navbar navbar-fixed-top"]{
+      div[class="navbar-inner"]{
+        div[class="container"]{
+          navCollapseButton
+          brand
+          div[class="nav-collapse collapse", style="height: 0px;"]{
+            elements
+          }
+        }
+      }
+    }
+  }  
   
   template navbarFluid() {
     div[class="navbar navbar-inverse navbar-fixed-top"]{
