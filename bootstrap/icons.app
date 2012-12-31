@@ -253,4 +253,11 @@ template iResizeHorizontalWhite() { <i class="icon-resize-horizontal icon-white"
 template iBell() { <i class="icon-bell"></i> }
 template iBellWhite() { <i class="icon-bell icon-white"></i> }
 
+template iWrench() { <i class="icon-wrench"></i> }
+template iThumbsUp() { <i class="icon-thumbs-up"></i> }
+template iThumbsDown() { <i class="icon-thumbs-down"></i> }
+
+ 
+
+
 
