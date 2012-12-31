@@ -228,6 +228,17 @@ section horizontal forms
     }
   }
 
+  template inputAppend() {
+    <div class="input-append">
+      elements
+    </div>
+  }
+  template inputPrepend() {
+    <div class="input-prepend">
+      elements
+    </div>
+  }
+  
 section breadcrumbs
 
   template breadcrumbs(){ 
