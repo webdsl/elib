@@ -229,16 +229,21 @@ section horizontal forms
   }
 
   template inputAppend() {
-    <div class="input-append">
+    <span class="input-append">
       elements
-    </div>
+    </span>
   }
   template inputPrepend() {
-    <div class="input-prepend">
+    <span class="input-prepend">
       elements
-    </div>
+    </span>
   }
-  
+  template inputPrependAppend() {
+    <span class="input-prepend input-append">
+      elements
+    </span>
+  }
+    
 section breadcrumbs
 
   template breadcrumbs(){ 
