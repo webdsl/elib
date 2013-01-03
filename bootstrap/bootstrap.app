@@ -25,6 +25,9 @@ section grid system
   template gridRow(){
   	div[class="row", all attributes]{ elements }
   }
+  template gridRow(cls: String){
+    div[class="row " + cls, all attributes]{ elements }
+  }
   template gridSpan(span: Int){
   	  div[class="span" + span, all attributes]{ elements }
   }
