@@ -564,18 +564,25 @@ section modal
   
 section definitionList
 
-	 define definitionList() {
+	template definitionList() {
 		<dl>elements</dl>
 	}
 	
-	define definitionItem(term : String) {
+	template definitionItem(term : String) {
 		<dt> output(term) </dt>
 		<dd> elements </dd>
 	}
   
-  	define definitionListDescription() {
-  		<dl class="dl-horizontal"> elements </dl>
-  	}
+  template definitionListDescription() {
+  	<dl class="dl-horizontal"> elements </dl>
+  }
   	
+section progress bar
+
+  template progressBar(percentage: Int) {
+    <div class="progress">
+       <div class="bar" style="width: " + percentage + "%;"></div>
+    </div>
+  }
 
 
