@@ -11,6 +11,8 @@ section markup
   
 //  template par() { <p> elements </p> }
 
+  template clear() { <div style="clear:both;"></div> } 
+
 section forms
 
   // define formEntry(l: String){ 
