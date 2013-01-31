@@ -19,4 +19,13 @@ body{
     }
 }
 
+code {
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    color: black;
+    padding: 3px 4px;
+}
 
+code, pre {
+	font-family: Monaco,"Courier New",monospace;
+}
