@@ -1,5 +1,5 @@
 module elib/checkboxWikiText
-
+ 
 
 section checkbox 
 
@@ -25,7 +25,7 @@ section checkbox
       validate{ getPage().enterLabelContext(tname); } 
       elements() 
       validate{ getPage().leaveLabelContext();}
-    }
+    } 
     else{
       inputCheckboxSetInternalWiki(set,from,tname, readonly)[all attributes]
       validate{ getPage().enterLabelContext(tname); } 
@@ -61,7 +61,7 @@ section checkbox
     var tmp := getRequestParameter(tname)
     var tnamehidden := tname + "_isinput"
     var tmphidden := getRequestParameter(tnamehidden)
-    <div class="checkbox-set-element">
+    <label class="checkbox checkbox-set-element">
       <input type="hidden" name=tnamehidden />
       <input type="checkbox" 
         name=tname 
@@ -72,9 +72,9 @@ section checkbox
         id=tname+e.id
         all attributes
       />
-      <label for=tname+e.id>
+      //<label for=tname+e.id>
         output(e.name as WikiText)
-      </label>
+      //</label>
     </div>
     databind{
       if(tmphidden != null && tmp != null && !readonly){ tmpset.add(e); }
