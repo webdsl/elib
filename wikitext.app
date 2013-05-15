@@ -1,5 +1,7 @@
 module elib/wikitext
 
-define outputRelaxed(s: WikiText){ rawoutput(s.relaxedFormat()) }
+define outputRelaxed(s: WikiText){ rawoutput(s) }
 
-type WikiText{ org.webdsl.tools.RelaxedWikiFormatter.wikiFormat as relaxedFormat():String }
+//for WebDSL versions < r5693 use:
+//define outputRelaxed(s: WikiText){ rawoutput(s.relaxedFormat()) }
+//type WikiText{ org.webdsl.tools.RelaxedWikiFormatter.wikiFormat as relaxedFormat():String }
