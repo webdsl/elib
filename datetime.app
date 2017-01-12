@@ -13,9 +13,9 @@ module elib/datetime
   }
 
   function age(now: DateTime, time : DateTime) : String {
-    var then : Long := time.getTime();
-    var now : Long := now.getTime();
-    var interval : Long := (now - then) / 60000L;
+    var thentime : Long := time.getTime();
+    var nowtime : Long := now.getTime();
+    var interval : Long := (nowtime - thentime) / 60000L;
     if(interval < 2)  { return "one minute"; }
     if(interval < 60) { return interval + " minutes"; }
     if(interval < 120) { return  "one hour"; }

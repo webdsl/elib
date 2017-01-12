@@ -169,8 +169,6 @@ section tables
 
 section forms
 
-  template span() { <span all attributes>elements</span> }
-
   template inlForm() { 
   	span[class="inlineForm"]{ 
   		form{
@@ -395,20 +393,20 @@ section tabs
   	</ul>
   }
   
-  template tabActive(label: String, id: String) { 
-  	tab(label, id, true)
+  template tabActive(label: String, idtab: String) { 
+  	tab(label, idtab, true)
   }  
   template tabActive(label: String) { 
   	tab(label, label, true)
   }  
-  template tab(label: String, id: String) { 
-  	tab(label, id, false)
+  template tab(label: String, idtab: String) { 
+  	tab(label, idtab, false)
   }
-  template tab(label: String, id: String, active: Bool) { 
-  	<li class=activeClass(active)><a href="#"+id data-toggle="tab">output(label)</a></li>
+  template tab(label: String, idtab: String, active: Bool) { 
+  	<li class=activeClass(active)><a href="#"+idtab data-toggle="tab">output(label)</a></li>
   	<script>
       $(function () {
-        $('#~id').tab('show')
+        $('#~idtab').tab('show')
       })
     </script>
   }
@@ -426,14 +424,14 @@ section tabs
   	}
   }
   
-  template tabPaneActive(id: String){
-  	tabPane(id, true) { elements }
+  template tabPaneActive(idtab: String){
+  	tabPane(idtab, true) { elements }
   }
-  template tabPane(id: String){
-  	tabPane(id, false) { elements }
+  template tabPane(idtab: String){
+  	tabPane(idtab, false) { elements }
   }
-  template tabPane(id: String, active: Bool){
-  	div[class="tab-pane " + activeClass(active), id=id]{
+  template tabPane(idtab: String, active: Bool){
+  	div[class="tab-pane " + activeClass(active), id=idtab]{
   		elements 
   	}
   }

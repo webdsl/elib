@@ -36,8 +36,8 @@ section ace editor
   	ace(code, lang, tname, readonly)
   }
   
-  define ace(code: Ref<Text>, lang : String, id: String) {  	
-  	ace(code, lang, id, false)
+  define ace(code: Ref<Text>, lang : String, idace: String) {  	
+  	ace(code, lang, idace, false)
   }
 
   define aceView(code: Ref<Text>, lang : String) {  	
@@ -45,41 +45,41 @@ section ace editor
   	ace(code, lang, tname, true)
   }
     
-  define aceView(code: Ref<Text>, lang : String, id: String) {  	
-  	ace(code, lang, id, true)
+  define aceView(code: Ref<Text>, lang : String, idace: String) {  	
+  	ace(code, lang, idace, true)
   }
   
   // 619px; height: 500px
   // todo: adapt size to window document.documentElement.clientWidth
   
-  define ace(code: Ref<Text>, lang : String, id: String, readonly: Bool) {
+  define ace(code: Ref<Text>, lang : String, idace: String, readonly: Bool) {
   	requireACE() 
-  	div[class="aceEditor", id="editor" + id, 
+  	div[class="aceEditor", id="editor" + idace, 
   	    style="position: absolute"
   	         + "; border: 1px solid #999;"
   	]{
   	  output(code)
   	}
 
-  	input(code)[style="display:none",id=id]
+  	input(code)[style="display:none",id=idace]
   	case(lang.toLowerCase()) {
   		"scala" {
   			<script>
-      		registerOnload(function() { scalaEditor('~id', ~readonly) });
+      		registerOnload(function() { scalaEditor('~idace', ~readonly) });
     		</script>
   		}
   		"c" {
   			<script>
-      		registerOnload(function() { cEditor('~id', ~readonly) });
+      		registerOnload(function() { cEditor('~idace', ~readonly) });
     		</script>
   		}
 		"js" {
                         <script>
-                registerOnload(function() { jsEditor('~id', ~readonly) });
+                registerOnload(function() { jsEditor('~idace', ~readonly) });
                 </script>
                 }
   	}
     // <script>
-    //   registerOnload(function() { scalaEditor('~id', ~readonly) });
+    //   registerOnload(function() { scalaEditor('~idace', ~readonly) });
     // </script>
   }
